@@ -1,0 +1,131 @@
+mode: rule
+mixed-port: 39993
+log-level: silent
+secret: Zz111136
+external-controller: 0.0.0.0:9099
+dns:
+  enable: true
+  ipv6: false
+  nameserver:
+  - tls://223.5.5.5:853
+  fallback:
+  - tls://1.0.0.1:853
+  - tls://8.8.4.4:853
+  - tls://101.101.101.101:853
+  fallback-filter:
+  geoip: true
+  geoip-code: CN
+  ipcidr:
+  - 0.0.0.0/8
+  - 10.0.0.0/8
+  - 100.64.0.0/10
+  - 127.0.0.0/8
+  - 169.254.0.0/16
+  - 172.16.0.0/12
+  - 192.0.0.0/24
+  - 192.0.2.0/24
+  - 192.88.99.0/24
+  - 192.168.0.0/16
+  - 198.18.0.0/15
+  - 198.51.100.0/24
+  - 203.0.113.0/24
+  - 224.0.0.0/4
+  - 240.0.0.0/4
+  - 255.255.255.255/32
+  
+  listen: 0.0.0.0:39994
+proxies:
+- name: myway
+  type: vless
+  server: 146.70.175.116
+  port: 443
+  uuid: ffc59aef-3253-4ae6-8a5d-7d2b43e8c25f
+  tls: true
+  servername: MYway.mYwAY.dYNV6.NET
+  network: ws
+  ws-opts:
+    path: "/HK1489d4cReuq821/MTQ2LjcwLjE3NS4xMTY=?ed=2560"
+    headers:
+      host: mywAY.MYWay.DyNv6.NEt
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+
+- name: dubaixiang.pages.dev
+  type: vless
+  server: pweot.dubaixiang.dynv6.net
+  port: 443
+  uuid: 9120b5ba-ecf7-48d8-bef7-b12e73d758cc
+  tls: true
+  servername: DubAiXiAng.PagEs.deV
+  network: ws
+  ws-opts:
+    path: "/DICEpaiHQmH120r3?ed=2560"
+    headers:
+      host: DubAiXiAng.PagEs.deV
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+- name: dwm.duweiming.dynv6.net
+  type: vless
+  server: dwm.duweiming.dynv6.net
+  port: 443
+  uuid: 9137b655-539a-4aff-8df1-25634fded711
+  tls: true
+  servername: DWM.DUwEIMinG.dYNV6.net
+  network: ws
+  ws-opts:
+    path: "/vfPl1kwFkhrgGOq2?ed=2560"
+    headers:
+      host: Dwm.dUwEIMinG.dyNV6.nEt
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+proxy-groups:
+- name: Proxy
+  type: select
+  proxies:
+  
+  #- myway
+  - dubaixiang.pages.dev
+  - dwm.duweiming.dynv6.net
+rules:
+- DST-PORT,39995,REJECT
+- DST-PORT,39992,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- DOMAIN-KEYWORD,onedrive,Proxy
+- DOMAIN-KEYWORD,github,Proxy
+- DOMAIN-KEYWORD,proton,Proxy
+- DOMAIN-SUFFIX,netflix.com,Proxy
+- DOMAIN-SUFFIX,netflix.net,Proxy
+- DOMAIN-SUFFIX,nflximg.com,Proxy
+- DOMAIN-SUFFIX,nflximg.net,Proxy
+- DOMAIN-SUFFIX,nflxvideo.net,Proxy
+- DOMAIN-SUFFIX, nflxso.net,Proxy
+- DOMAIN-SUFFIX,nflxext.com,Proxy
+- DOMAIN-SUFFIX,ai.com,myway
+- DOMAIN-SUFFIX,openai.com,myway
+- DOMAIN-KEYWORD,chatgpt,myway
+- DOMAIN-SUFFIX,fast.com,Proxy
+- DOMAIN-SUFFIX,pandora.com,Proxy
+- DOMAIN-KEYWORD,google,Proxy
+- DOMAIN-KEYWORD,gmail,Proxy
+- DOMAIN-KEYWORD,youtube,Proxy
+- DOMAIN-KEYWORD,facebook,Proxy
+- DOMAIN-KEYWORD,twitter,Proxy
+- DOMAIN-KEYWORD,instagram,Proxy
+- DOMAIN-KEYWORD,dropbox,Proxy
+- DOMAIN-KEYWORD,android.com,Proxy
+- DOMAIN-KEYWORD,881903,Proxy
+- DOMAIN-KEYWORD,metroradio,Proxy
+- DOMAIN-SUFFIX,yt.be,Proxy
+- DOMAIN-SUFFIX,yt3.ggpht.com,Proxy
+- DOMAIN-SUFFIX,ytimg.com,Proxy
+- DOMAIN-SUFFIX,googlevideo.com,Proxy
+- DOMAIN-SUFFIX,blogspot.com,Proxy
+- DOMAIN-SUFFIX,google.com.hk,Proxy
+- DOMAIN-SUFFIX,cn.tradingview.com,Proxy
+- MATCH,DIRECT
