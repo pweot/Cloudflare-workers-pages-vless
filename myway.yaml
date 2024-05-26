@@ -10,8 +10,8 @@ dns:
   - tls://223.5.5.5:853
   fallback:
   - tls://1.0.0.1:853
-  - tls://8.8.4.4:853
-  - tls://101.101.101.101:853
+  #- tls://8.8.4.4:853
+  #- tls://101.101.101.101:853
   fallback-filter:
   geoip: true
   geoip-code: CN
@@ -35,6 +35,37 @@ dns:
   
   listen: 0.0.0.0:39994
 proxies:
+- name: Lv1
+  type: wireguard
+  ipv6: 2606:4700:d0::7368:605d:2830:ddb2
+  server: 162.159.195.7
+  port: 500
+  ip: 172.16.0.102
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: AP/akN9yTUx3z3TRlVRav4EDNCS7yZL4IaCvSaWa4EM=
+  mtu: 1280
+  udp: true
+- name: Lv2
+  type: wireguard
+  ipv6: 2606:4700:d1::c06f:55c3:0fbb:ee4f
+  server: 162.159.192.179
+  port: 5279
+  ip: 172.16.0.103
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: yOkI1geVo7TMVPBcD47Il3tnQPsjyjpn6smXIoS95mY=
+  mtu: 1280
+  udp: true
+- name: Lv3
+  type: wireguard
+  ipv6: 2606:4700:d0::ba8d:0720:86ef:e7e7
+  server: 162.159.192.104
+  port: 1070
+  ip: 172.16.0.104
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  private-key: MH/zdcN+1BXn8nin4Q+25AtPolYXhihWna+8dagDv28=
+  mtu: 1280
+  udp: true
+
 - name: myway
   type: vless
   server: 146.70.175.116
@@ -68,6 +99,7 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: randomized
+
 - name: dwm.duweiming.dynv6.net
   type: vless
   server: dwm.duweiming.dynv6.net
@@ -84,18 +116,84 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: randomized
+
+- name: edtunnel-1dx.pages.dev
+  type: vless
+  server: edtunnel.pangluyou88.dynv6.net
+  port: 443
+  uuid: be86a4d1-ba97-45ff-b881-c20c053cbb50
+  tls: true
+  servername: edtunnel.pangluyou88.dynv6.net
+  network: ws
+  ws-opts:
+    path: "/?ed=2048"
+    headers:
+      host: edtunnel.pangluyou88.dynv6.net
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+
+- name: edtunnel-6w6.pages.dev
+  type: vless
+  server: edtunnel-6w6.pages.dev
+  port: 443
+  uuid: 5feb2984-7b55-4e68-b081-b2ab7d2e784888
+  tls: true
+  servername: edtunnel-6w6.pages.dev
+  network: ws
+  ws-opts:
+    path: "/?ed=2048"
+    headers:
+      host: edtunnel-6w6.pages.dev
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+
 proxy-groups:
-- name: Proxy
+- name: 负载均衡
+  type: load-balance
+  url: https://cp.cloudflare.com/generate_204
+  interval: 3721
+  strategy: round-robin
+  proxies:
+    - Lv1
+    - Lv2
+    - Lv3
+    - dubaixiang.pages.dev
+    - dwm.duweiming.dynv6.net
+    - edtunnel-1dx.pages.dev
+    - edtunnel-6w6.pages.dev
+- name: 自动选择
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204
+  interval: 3721
+  tolerance: 50
+  proxies:
+    - Lv1
+    - Lv2
+    - Lv3
+    - dubaixiang.pages.dev
+    - dwm.duweiming.dynv6.net
+    - edtunnel-1dx.pages.dev
+    - edtunnel-6w6.pages.dev
+    
+- name: 🌍选择代理节点
   type: select
   proxies:
-  
-  #- myway
-  - dubaixiang.pages.dev
-  - dwm.duweiming.dynv6.net
+    - 负载均衡                                            
+    - 自动选择
+    - DIRECT
+    - Lv1
+    - Lv2
+    - Lv3
+    - dubaixiang.pages.dev
+    - dwm.duweiming.dynv6.net
+    - edtunnel-1dx.pages.dev
+    - edtunnel-6w6.pages.dev
+#·······································································································································
 rules:
-- DST-PORT,39995,REJECT
-- DST-PORT,39992,REJECT
-- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
 - DOMAIN-KEYWORD,proton,Proxy
@@ -119,8 +217,8 @@ rules:
 - DOMAIN-KEYWORD,instagram,Proxy
 - DOMAIN-KEYWORD,dropbox,Proxy
 - DOMAIN-KEYWORD,android.com,Proxy
-- DOMAIN-KEYWORD,881903,Proxy
-- DOMAIN-KEYWORD,metroradio,Proxy
+#- DOMAIN-KEYWORD,881903,Proxy
+#- DOMAIN-KEYWORD,metroradio,Proxy
 - DOMAIN-SUFFIX,yt.be,Proxy
 - DOMAIN-SUFFIX,yt3.ggpht.com,Proxy
 - DOMAIN-SUFFIX,ytimg.com,Proxy
