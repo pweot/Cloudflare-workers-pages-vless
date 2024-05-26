@@ -185,12 +185,12 @@ proxy-groups:
     - 负载均衡                                            
     - 自动选择
     - DIRECT
+    - edtunnel-1dx.pages.dev
     - Lv1
     - Lv2
     - Lv3
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
-    - edtunnel-1dx.pages.dev
     - edtunnel-6w6.pages.dev
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
