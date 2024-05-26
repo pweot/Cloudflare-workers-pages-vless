@@ -37,7 +37,6 @@ dns:
 proxies:
 - name: Lv1
   type: wireguard
-  ipv6: 2606:4700:d0::7368:605d:2830:ddb2
   server: 162.159.195.7
   port: 500
   ip: 172.16.0.102
@@ -47,7 +46,6 @@ proxies:
   udp: true
 - name: Lv2
   type: wireguard
-  ipv6: 2606:4700:d1::c06f:55c3:0fbb:ee4f
   server: 162.159.192.179
   port: 5279
   ip: 172.16.0.103
@@ -57,7 +55,6 @@ proxies:
   udp: true
 - name: Lv3
   type: wireguard
-  ipv6: 2606:4700:d0::ba8d:0720:86ef:e7e7
   server: 162.159.192.104
   port: 1070
   ip: 172.16.0.104
