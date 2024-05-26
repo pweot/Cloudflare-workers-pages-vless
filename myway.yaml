@@ -138,7 +138,7 @@ proxies:
   type: vless
   server: edtunnel-6w6.pages.dev
   port: 443
-  uuid: 5feb2984-7b55-4e68-b081-b2ab7d2e784888
+  uuid: 5feb2984-7b55-4e68-b081-b2ab7d2e7848
   tls: true
   servername: edtunnel-6w6.pages.dev
   network: ws
