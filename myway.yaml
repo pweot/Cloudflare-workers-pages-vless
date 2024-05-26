@@ -143,33 +143,36 @@ proxy-groups:
   interval: 3721
   strategy: round-robin
   proxies:
+    - guanfang.pages.dev
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
     - edtunnel-1dx.pages.dev
     - edtunnel-6w6.pages.dev
-    - guanfang.pages.dev
+   
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 3721
   tolerance: 50
   proxies:
+    - guanfang.pages.dev
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
     - edtunnel-1dx.pages.dev
     - edtunnel-6w6.pages.dev
-    - guanfang.pages.dev
+    
 - name: Proxy
   type: select
   proxies:
     - 负载均衡                                            
     - 自动选择
     - DIRECT
+    - guanfang.pages.dev
     - edtunnel-6w6.pages.dev
     - edtunnel-1dx.pages.dev
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
-    - guanfang.pages.dev
+    
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
