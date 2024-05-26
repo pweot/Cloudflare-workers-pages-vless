@@ -35,69 +35,6 @@ dns:
   
   listen: 0.0.0.0:39994
 proxies:
-- name: Lv1
-  type: wireguard
-  server: 162.159.195.7
-  port: 500
-  ip: 172.16.0.102
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: AP/akN9yTUx3z3TRlVRav4EDNCS7yZL4IaCvSaWa4EM=
-  mtu: 1280
-  udp: true
-- name: Lv2
-  type: wireguard
-  server: 162.159.192.179
-  port: 5279
-  ip: 172.16.0.103
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: yOkI1geVo7TMVPBcD47Il3tnQPsjyjpn6smXIoS95mY=
-  mtu: 1280
-  udp: true
-- name: Lv3
-  type: wireguard
-  server: 162.159.192.104
-  port: 1070
-  ip: 172.16.0.104
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: MH/zdcN+1BXn8nin4Q+25AtPolYXhihWna+8dagDv28=
-  mtu: 1280
-  udp: true
-- name: Lv4
-  type: wireguard
-  server: 162.159.195.126
-  port: 880
-  ip: 172.16.0.105
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: yH8ApzyYERijlURQN80GuwMD9Td9IAMRs6uRXaDkEGo=
-  mtu: 1280
-  udp: true
-- name: Lv5
-  type: wireguard
-  server: 162.159.192.51
-  port: 928
-  ip: 172.16.0.106
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: CN7IbLVSmI2CsbC6ClzlS9iGKpwI7KI/gFDp8h21zXs=
-  mtu: 1280
-  udp: true
-- name: Lv6
-  type: wireguard
-  server: 162.159.195.50
-  port: 2371
-  ip: 172.16.0.107
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: cIbC5kVF5v3F9U9YzX2gFORfRCogK2Yp/wMRyRAKfmI=
-  mtu: 1280
-  udp: true
-- name: Lv7
-  type: wireguard
-  server: 162.159.192.112
-  port: 1387
-  ip: 172.16.0.108
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: gIKpF6u+FxZ7/leWMVqqMzI+4+/AHocOC77VJwt9rU4=
-  mtu: 1280
-  udp: true
 - name: myway
   type: vless
   server: 146.70.175.116
@@ -187,29 +124,19 @@ proxy-groups:
 - name: 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
-  interval: 999
+  interval: 3721
   strategy: round-robin
   proxies:
-    - Lv1
-    - Lv2
-    - Lv3
-    - Lv4
-    - Lv5
-    - Lv6
-    - Lv7
+    - dubaixiang.pages.dev
+    - dwm.duweiming.dynv6.net
+    - edtunnel-1dx.pages.dev
+    - edtunnel-6w6.pages.dev
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 3721
   tolerance: 50
   proxies:
-    - Lv1
-    - Lv2
-    - Lv3
-    - Lv4
-    - Lv5
-    - Lv6
-    - Lv7
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
     - edtunnel-1dx.pages.dev
@@ -221,32 +148,26 @@ proxy-groups:
     - 负载均衡                                            
     - 自动选择
     - DIRECT
+    - edtunnel-6w6.pages.dev
     - edtunnel-1dx.pages.dev
-    - Lv1
-    - Lv2
-    - Lv3
-    - Lv4
-    - Lv5
-    - Lv6
-    - Lv7
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
-    - edtunnel-6w6.pages.dev
+
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
 - DOMAIN-KEYWORD,proton,Proxy
-- DOMAIN-SUFFIX,netflix.com,edtunnel-6w6.pages.dev
-- DOMAIN-SUFFIX,netflix.net,edtunnel-6w6.pages.dev
-- DOMAIN-SUFFIX,nflximg.com,edtunnel-6w6.pages.dev
-- DOMAIN-SUFFIX,nflximg.net,edtunnel-6w6.pages.dev
-- DOMAIN-SUFFIX,nflxvideo.net,edtunnel-6w6.pages.dev
-- DOMAIN-SUFFIX, nflxso.net,edtunnel-6w6.pages.dev
-- DOMAIN-SUFFIX,nflxext.com,edtunnel-6w6.pages.dev
+- DOMAIN-SUFFIX,netflix.com,Proxy
+- DOMAIN-SUFFIX,netflix.net,Proxy
+- DOMAIN-SUFFIX,nflximg.com,Proxy
+- DOMAIN-SUFFIX,nflximg.net,Proxy
+- DOMAIN-SUFFIX,nflxvideo.net,Proxy
+- DOMAIN-SUFFIX, nflxso.net,Proxy
+- DOMAIN-SUFFIX,nflxext.com,Proxy
 - DOMAIN-SUFFIX,ai.com,myway
 - DOMAIN-SUFFIX,openai.com,myway
 - DOMAIN-KEYWORD,chatgpt,myway
-- DOMAIN-SUFFIX,fast.com,edtunnel-6w6.pages.dev
+- DOMAIN-SUFFIX,fast.com,Proxy
 - DOMAIN-SUFFIX,pandora.com,Proxy
 - DOMAIN-KEYWORD,google,Proxy
 - DOMAIN-KEYWORD,gmail,Proxy
