@@ -179,7 +179,7 @@ proxy-groups:
     - edtunnel-1dx.pages.dev
     - edtunnel-6w6.pages.dev
     
-- name: 🌍选择代理节点
+- name: Proxy
   type: select
   proxies:
     - 负载均衡                                            
