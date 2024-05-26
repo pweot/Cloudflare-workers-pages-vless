@@ -192,7 +192,6 @@ proxy-groups:
     - dwm.duweiming.dynv6.net
     - edtunnel-1dx.pages.dev
     - edtunnel-6w6.pages.dev
-#·······································································································································
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
