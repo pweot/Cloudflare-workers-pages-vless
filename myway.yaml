@@ -120,6 +120,22 @@ proxies:
   - http/1.1
   client-fingerprint: randomized
 
+- name: guanfang.pages.dev
+  type: vless
+  server: time.cloudflare.com
+  port: 443
+  uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
+  tls: true
+  servername: guanfang.pages.dev
+  network: ws
+  ws-opts:
+    path: "/?ed=2048"
+    headers:
+      host: guanfang.pages.dev
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
 proxy-groups:
 - name: 负载均衡
   type: load-balance
@@ -131,6 +147,7 @@ proxy-groups:
     - dwm.duweiming.dynv6.net
     - edtunnel-1dx.pages.dev
     - edtunnel-6w6.pages.dev
+    - guanfang.pages.dev
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -141,7 +158,7 @@ proxy-groups:
     - dwm.duweiming.dynv6.net
     - edtunnel-1dx.pages.dev
     - edtunnel-6w6.pages.dev
-    
+    - guanfang.pages.dev
 - name: Proxy
   type: select
   proxies:
@@ -152,7 +169,7 @@ proxy-groups:
     - edtunnel-1dx.pages.dev
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
-
+    - guanfang.pages.dev
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
