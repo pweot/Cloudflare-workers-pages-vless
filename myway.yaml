@@ -71,7 +71,7 @@ proxies:
 
 - name: dwm.duweiming.dynv6.net
   type: vless
-  server: 47.242.68.32
+  server: 104.17.116.66
   port: 443
   uuid: 9137b655-539a-4aff-8df1-25634fded711
   tls: true
