@@ -272,35 +272,6 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: randomized
-
-- name: Proxy
-  type: select
-  proxies:
-    - 负载均衡
-   # - openaiProxy
-    - 自动选择
-    - DIRECT
-    - Lv1
-    - Lv2
-    - Lv3
-    - Lv4
-    - Lv5
-    - Lv6
-    - Lv7
-    - Lv8
-    - Lv9
-    - Lv10
-    - Lv11
-    - Lv12
-    - Lv13
-    - Lv14
-    - Lv15
-    - guanfang.pages.dev
-    #- openai1
-    #- openai2
-    - edtunnel-1dx.pages.dev
-    - dubaixiang.pages.dev
-    - dwm.duweiming.dynv6.net
     
 
 proxy-groups:
@@ -365,7 +336,34 @@ proxy-groups:
     #- dwm.duweiming.dynv6.net
     #- edtunnel-1dx.pages.dev
     #- openai
-    
+ - name: Proxy
+  type: select
+  proxies:
+    - 负载均衡
+   # - openaiProxy
+    - 自动选择
+    - DIRECT
+    - Lv1
+    - Lv2
+    - Lv3
+    - Lv4
+    - Lv5
+    - Lv6
+    - Lv7
+    - Lv8
+    - Lv9
+    - Lv10
+    - Lv11
+    - Lv12
+    - Lv13
+    - Lv14
+    - Lv15
+    - guanfang.pages.dev
+    #- openai1
+    #- openai2
+    - edtunnel-1dx.pages.dev
+    - dubaixiang.pages.dev
+    - dwm.duweiming.dynv6.net   
 
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
