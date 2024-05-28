@@ -340,7 +340,7 @@ proxy-groups:
   type: select
   proxies:
     - 负载均衡
-    - openaiProxy
+   # - openaiProxy
     - 自动选择
     - DIRECT
     - Lv1
