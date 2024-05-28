@@ -277,7 +277,7 @@ proxies:
   type: select
   proxies:
     - 负载均衡
-    #- openaiProxy
+   # - openaiProxy
     - 自动选择
     - DIRECT
     - Lv1
@@ -302,6 +302,7 @@ proxies:
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
     
+
 proxy-groups:
 - name: 负载均衡
   type: load-balance
@@ -329,16 +330,15 @@ proxy-groups:
    # - dwm.duweiming.dynv6.net
     #- edtunnel-1dx.pages.dev
     #- openai
-    
 - name: openaiProxy
   type: url-test
   #url: http://www.gstatic.com/generate_204
  # interval: 3721
-  #tolerance: 50  
+  #tolerance: 50
+     
   proxies:  
   - openai1
   - openai2
-  
 - name: 自动选择
   type: url-test
   #url: http://www.gstatic.com/generate_204
@@ -366,6 +366,7 @@ proxy-groups:
     #- edtunnel-1dx.pages.dev
     #- openai
     
+
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
