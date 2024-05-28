@@ -173,7 +173,7 @@ proxies:
 
 - name: openai1
   type: vless
-  server: 146.70.175.116
+  server: 146.70.169.118
   port: 443
   uuid: ffc59aef-3253-4ae6-8a5d-7d2b43e8c25f
   tls: true
@@ -207,7 +207,7 @@ proxies:
 
 - name: dubaixiang.pages.dev
   type: vless
-  server: pweot.dubaixiang.dynv6.net
+  server: www.visa.com
   port: 443
   uuid: 9120b5ba-ecf7-48d8-bef7-b12e73d758cc
   tls: true
@@ -224,7 +224,7 @@ proxies:
 
 - name: edtunnel-1dx.pages.dev
   type: vless
-  server: edtunnel.pangluyou88.dynv6.net
+  server: whoer.net
   port: 443
   uuid: be86a4d1-ba97-45ff-b881-c20c053cbb50
   tls: true
@@ -241,7 +241,7 @@ proxies:
 
 - name: dwm.duweiming.dynv6.net
   type: vless
-  server: 104.17.116.66
+  server: ljp.xjqxz.xyz
   port: 443
   uuid: 9137b655-539a-4aff-8df1-25634fded711
   tls: true
@@ -258,7 +258,7 @@ proxies:
 
 - name: guanfang.pages.dev
   type: vless
-  server: 104.19.182.28
+  server: cloudflare.com
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
@@ -311,9 +311,9 @@ proxy-groups:
   - openai2
 - name: 自动选择
   type: url-test
-  #url: http://www.gstatic.com/generate_204
- # interval: 3721
-  #tolerance: 50
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
   proxies:
     - Lv1
     - Lv2
@@ -330,17 +330,16 @@ proxy-groups:
     - Lv13
     - Lv14
     - Lv15
-    #- guanfang.pages.dev
-    #- dubaixiang.pages.dev
-    #- dwm.duweiming.dynv6.net
-    #- edtunnel-1dx.pages.dev
-    #- openai
+    - guanfang.pages.dev
+    - dubaixiang.pages.dev
+    - dwm.duweiming.dynv6.net
+    - edtunnel-1dx.pages.dev
+
     
 - name: Proxy
   type: select
   proxies:
     - 负载均衡
-   # - openaiProxy
     - 自动选择
     - DIRECT
     - Lv1
@@ -359,8 +358,6 @@ proxy-groups:
     - Lv14
     - Lv15
     - guanfang.pages.dev
-    #- openai1
-    #- openai2
     - edtunnel-1dx.pages.dev
     - dubaixiang.pages.dev
     - dwm.duweiming.dynv6.net
@@ -369,17 +366,17 @@ rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
 - DOMAIN-KEYWORD,proton,Proxy
-- DOMAIN-SUFFIX,netflix.com,guanfang.pages.dev
-- DOMAIN-SUFFIX,netflix.net,guanfang.pages.dev
-- DOMAIN-SUFFIX,nflximg.com,guanfang.pages.dev
-- DOMAIN-SUFFIX,nflximg.net,guanfang.pages.dev
-- DOMAIN-SUFFIX,nflxvideo.net,guanfang.pages.dev
-- DOMAIN-SUFFIX, nflxso.net,guanfang.pages.dev
-- DOMAIN-SUFFIX,nflxext.com,guanfang.pages.dev
+- DOMAIN-SUFFIX,netflix.com,Proxy
+- DOMAIN-SUFFIX,netflix.net,Proxy
+- DOMAIN-SUFFIX,nflximg.com,Proxy
+- DOMAIN-SUFFIX,nflximg.net,Proxy
+- DOMAIN-SUFFIX,nflxvideo.net,Proxy
+- DOMAIN-SUFFIX, nflxso.net,Proxy
+- DOMAIN-SUFFIX,nflxext.com,Proxy
 - DOMAIN-SUFFIX,ai.com,openaiProxy
 - DOMAIN-SUFFIX,openai.com,openaiProxy
 - DOMAIN-KEYWORD,chatgpt,openaiProxy
-- DOMAIN-SUFFIX,fast.com,guanfang.pages.dev
+- DOMAIN-SUFFIX,fast.com,Proxy
 - DOMAIN-SUFFIX,pandora.com,Proxy
 - DOMAIN-KEYWORD,google,Proxy
 - DOMAIN-KEYWORD,gmail,Proxy
