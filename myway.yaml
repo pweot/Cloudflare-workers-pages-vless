@@ -258,7 +258,7 @@ proxies:
 
 - name: guanfang.pages.dev
   type: vless
-  server: cloudflare.com
+  server: japan.com
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
