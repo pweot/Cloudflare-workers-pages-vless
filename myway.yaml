@@ -272,7 +272,6 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: randomized
-    
 
 proxy-groups:
 - name: 负载均衡
@@ -336,11 +335,12 @@ proxy-groups:
     #- dwm.duweiming.dynv6.net
     #- edtunnel-1dx.pages.dev
     #- openai
- - name: Proxy
+    
+- name: Proxy
   type: select
   proxies:
     - 负载均衡
-   # - openaiProxy
+    - openaiProxy
     - 自动选择
     - DIRECT
     - Lv1
@@ -363,8 +363,8 @@ proxy-groups:
     #- openai2
     - edtunnel-1dx.pages.dev
     - dubaixiang.pages.dev
-    - dwm.duweiming.dynv6.net   
-
+    - dwm.duweiming.dynv6.net
+    
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
