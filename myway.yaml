@@ -294,10 +294,8 @@ proxy-groups:
   type: select
   proxies:
     - 自动选择
-    - DIRECT
     - guanfang.pages.dev
     - guanfang-duweiming2005gmail.pages.dev
- 
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
@@ -312,10 +310,10 @@ rules:
 - DOMAIN-SUFFIX,ai.com,openaiProxy
 - DOMAIN-SUFFIX,openai.com,openaiProxy
 - DOMAIN-KEYWORD,chatgpt,openaiProxy
-- DOMAIN-SUFFIX,fast.com,Proxy
+- DOMAIN-SUFFIX,fast.com,负载均衡guanfang
 - DOMAIN-SUFFIX,pandora.com,Proxy
-- DOMAIN-KEYWORD,google,Proxy
-- DOMAIN-KEYWORD,gmail,Proxy
+- DOMAIN-KEYWORD,google,,负载均衡guanfang
+- DOMAIN-KEYWORD,gmail,,负载均衡guanfang
 - DOMAIN-KEYWORD,youtube,Proxy
 - DOMAIN-KEYWORD,facebook,Proxy
 - DOMAIN-KEYWORD,twitter,Proxy
