@@ -312,8 +312,8 @@ rules:
 - DOMAIN-KEYWORD,chatgpt,openaiProxy
 - DOMAIN-SUFFIX,fast.com,负载均衡guanfang
 - DOMAIN-SUFFIX,pandora.com,Proxy
-- DOMAIN-KEYWORD,google,负载均衡guanfang
-- DOMAIN-KEYWORD,gmail,负载均衡guanfang
+- DOMAIN-KEYWORD,google,Proxy
+- DOMAIN-KEYWORD,gmail,Proxy
 - DOMAIN-KEYWORD,youtube,Proxy
 - DOMAIN-KEYWORD,facebook,Proxy
 - DOMAIN-KEYWORD,twitter,Proxy
@@ -325,6 +325,6 @@ rules:
 - DOMAIN-SUFFIX,ytimg.com,Proxy
 - DOMAIN-SUFFIX,googlevideo.com,Proxy
 - DOMAIN-SUFFIX,blogspot.com,Proxy
-- DOMAIN-SUFFIX,google.com.hk,负载均衡guanfang
+- DOMAIN-SUFFIX,google.com.hk,Proxy
 - DOMAIN-SUFFIX,cn.tradingview.com,Proxy
 - MATCH,DIRECT
