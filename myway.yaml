@@ -295,8 +295,7 @@ proxy-groups:
   proxies:
     - 自动选择
     - DIRECT
-    - guanfang.pages.dev
-    - guanfang-duweiming2005gmail.pages.dev
+    - 负载均衡guanfang
  
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
