@@ -171,86 +171,52 @@ proxies:
   mtu: 1280
   udp: true
 
-- name: openai1
+- name: openai-1-2024-5-30.pages.dev
   type: vless
   server: 146.70.169.118
   port: 443
-  uuid: ffc59aef-3253-4ae6-8a5d-7d2b43e8c25f
+  uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
-  servername: MYway.mYwAY.dYNV6.NET
+  servername: openai-1-2024-5-30.pages.dev
   network: ws
   ws-opts:
-    path: "/HK1489d4cReuq821/MTQ2LjcwLjE3NS4xMTY=?ed=2560"
+    path: "/?ed=2048"
     headers:
-      host: mywAY.MYWay.DyNv6.NEt
+      host: openai-1-2024-5-30.pages.dev
   alpn:
   - h2
   - http/1.1
   client-fingerprint: randomized
 
-- name: openai2
+- name: openai-2-2024-5-30.pages.dev
   type: vless
   server: 146.70.175.105
   port: 443
-  uuid: 5feb2984-7b55-4e68-b081-b2ab7d2e7848
+  uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
-  servername: dwm2005.pweotproton.dynv6.net
+  servername: openai-2-2024-5-30.pages.dev
   network: ws
   ws-opts:
     path: "/?ed=2048"
     headers:
-      host: dwm2005.pweotproton.dynv6.net
+      host: openai-2-2024-5-30.pages.dev
   alpn:
   - h2
   - http/1.1
   client-fingerprint: randomized
 
-- name: dubaixiang.pages.dev
+- name: guanfang-duweiming2005gmail.pages.dev
   type: vless
-  server: www.visa.com
+  server: japan.com
   port: 443
-  uuid: 9120b5ba-ecf7-48d8-bef7-b12e73d758cc
+  uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
-  servername: DubAiXiAng.PagEs.deV
-  network: ws
-  ws-opts:
-    path: "/DICEpaiHQmH120r3?ed=2560"
-    headers:
-      host: DubAiXiAng.PagEs.deV
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: randomized
-
-- name: edtunnel-1dx.pages.dev
-  type: vless
-  server: whoer.net
-  port: 443
-  uuid: be86a4d1-ba97-45ff-b881-c20c053cbb50
-  tls: true
-  servername: edtunnel.pangluyou88.dynv6.net
+  servername: guanfang-duweiming2005gmail.pages.dev
   network: ws
   ws-opts:
     path: "/?ed=2048"
     headers:
-      host: edtunnel.pangluyou88.dynv6.net
-  alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: randomized
-
-- name: dwm.duweiming.dynv6.net
-  type: vless
-  server: ljp.xjqxz.xyz
-  port: 443
-  uuid: 9137b655-539a-4aff-8df1-25634fded711
-  tls: true
-  servername: DWM.DUwEIMinG.dYNV6.net
-  network: ws
-  ws-opts:
-    path: "/vfPl1kwFkhrgGOq2?ed=2560"
-    headers:
-      host: Dwm.dUwEIMinG.dyNV6.nEt
+      host: guanfang-duweiming2005gmail.pages.dev
   alpn:
   - h2
   - http/1.1
@@ -295,11 +261,17 @@ proxy-groups:
     - Lv13
     - Lv14
     - Lv15
-   # - guanfang.pages.dev
-   # - dubaixiang.pages.dev
-   # - dwm.duweiming.dynv6.net
-    #- edtunnel-1dx.pages.dev
-    #- openai
+    #- guanfang.pages.dev
+    #- guanfang-duweiming2005gmail.pages.dev
+    
+- name: 负载均衡guanfang
+  type: load-balance
+  #url: http://www.gstatic.com/generate_204
+  #interval: 3721
+  strategy: round-robin
+  proxies:
+    - guanfang.pages.dev
+    - guanfang-duweiming2005gmail.pages.dev
 - name: openaiProxy
   type: url-test
   #url: http://www.gstatic.com/generate_204
@@ -307,79 +279,43 @@ proxy-groups:
   #tolerance: 50
      
   proxies:  
-  - openai1
-  - openai2
+  - openai-1-2024-5-30.pages.dev
+  - openai-2-2024-5-30.pages.dev
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-    - Lv1
-    - Lv2
-    - Lv3
-    - Lv4
-    - Lv5
-    - Lv6
-    - Lv7
-    - Lv8
-    - Lv9
-    - Lv10
-    - Lv11
-    - Lv12
-    - Lv13
-    - Lv14
-    - Lv15
-    - guanfang.pages.dev
-    - dubaixiang.pages.dev
-    - dwm.duweiming.dynv6.net
-    - edtunnel-1dx.pages.dev
-
-    
+    - 负载均衡
+    - 负载均衡guanfang
+       
 - name: Proxy
   type: select
   proxies:
-    - 负载均衡
     - 自动选择
     - DIRECT
-    - Lv1
-    - Lv2
-    - Lv3
-    - Lv4
-    - Lv5
-    - Lv6
-    - Lv7
-    - Lv8
-    - Lv9
-    - Lv10
-    - Lv11
-    - Lv12
-    - Lv13
-    - Lv14
-    - Lv15
     - guanfang.pages.dev
-    - edtunnel-1dx.pages.dev
-    - dubaixiang.pages.dev
-    - dwm.duweiming.dynv6.net
-    
+    - guanfang-duweiming2005gmail.pages.dev
+ 
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
 - DOMAIN-KEYWORD,proton,Proxy
-- DOMAIN-SUFFIX,netflix.com,Proxy
-- DOMAIN-SUFFIX,netflix.net,Proxy
-- DOMAIN-SUFFIX,nflximg.com,Proxy
-- DOMAIN-SUFFIX,nflximg.net,Proxy
-- DOMAIN-SUFFIX,nflxvideo.net,Proxy
-- DOMAIN-SUFFIX, nflxso.net,Proxy
-- DOMAIN-SUFFIX,nflxext.com,Proxy
+- DOMAIN-SUFFIX,netflix.com,负载均衡guanfang
+- DOMAIN-SUFFIX,netflix.net,负载均衡guanfang
+- DOMAIN-SUFFIX,nflximg.com,负载均衡guanfang
+- DOMAIN-SUFFIX,nflximg.net,负载均衡guanfang
+- DOMAIN-SUFFIX,nflxvideo.net,负载均衡guanfang
+- DOMAIN-SUFFIX, nflxso.net,负载均衡guanfang
+- DOMAIN-SUFFIX,nflxext.com,负载均衡guanfang
 - DOMAIN-SUFFIX,ai.com,openaiProxy
 - DOMAIN-SUFFIX,openai.com,openaiProxy
 - DOMAIN-KEYWORD,chatgpt,openaiProxy
 - DOMAIN-SUFFIX,fast.com,Proxy
 - DOMAIN-SUFFIX,pandora.com,Proxy
-- DOMAIN-KEYWORD,google,Proxy
-- DOMAIN-KEYWORD,gmail,Proxy
+- DOMAIN-KEYWORD,google,负载均衡guanfang
+- DOMAIN-KEYWORD,gmail,负载均衡guanfang
 - DOMAIN-KEYWORD,youtube,Proxy
 - DOMAIN-KEYWORD,facebook,Proxy
 - DOMAIN-KEYWORD,twitter,Proxy
@@ -391,6 +327,6 @@ rules:
 - DOMAIN-SUFFIX,ytimg.com,Proxy
 - DOMAIN-SUFFIX,googlevideo.com,Proxy
 - DOMAIN-SUFFIX,blogspot.com,Proxy
-- DOMAIN-SUFFIX,google.com.hk,Proxy
+- DOMAIN-SUFFIX,google.com.hk,负载均衡guanfang
 - DOMAIN-SUFFIX,cn.tradingview.com,Proxy
 - MATCH,DIRECT
