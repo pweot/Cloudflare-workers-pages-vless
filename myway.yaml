@@ -266,17 +266,17 @@ proxy-groups:
     
 - name: 负载均衡guanfang
   type: load-balance
-  #url: http://www.gstatic.com/generate_204
-  #interval: 3721
+  url: http://www.gstatic.com/generate_204
+  interval: 300
   strategy: round-robin
   proxies:
     - guanfang.pages.dev
     - guanfang-duweiming2005gmail.pages.dev
 - name: openaiProxy
   type: url-test
-  #url: http://www.gstatic.com/generate_204
- # interval: 3721
-  #tolerance: 50
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
      
   proxies:  
   - openai-1-2024-5-30.pages.dev
@@ -294,8 +294,8 @@ proxy-groups:
   type: select
   proxies:
     - 自动选择
-    - DIRECT
-    - 负载均衡guanfang
+    - guanfang.pages.dev
+    - guanfang-duweiming2005gmail.pages.dev
  
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
