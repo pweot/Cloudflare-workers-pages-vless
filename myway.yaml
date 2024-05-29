@@ -177,12 +177,12 @@ proxies:
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
-  servername: openai-1-2024-5-30.pages.dev
+  servername: openAI-1-2024-5-30.PagEs.dEV
   network: ws
   ws-opts:
-    path: "/?ed=2048"
+    path: "/eZMiyd5VFdloygNI?ed=2560"
     headers:
-      host: openai-1-2024-5-30.pages.dev
+      host: openAi-1-2024-5-30.pAGES.dEV
   alpn:
   - h2
   - http/1.1
@@ -194,12 +194,12 @@ proxies:
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
-  servername: openai-2-2024-5-30.pages.dev
+  servername: oPEnai-2-2024-5-30.PaGEs.DeV
   network: ws
   ws-opts:
-    path: "/?ed=2048"
+    path: "/t6i0IxNJAwNYT4nj?ed=2560"
     headers:
-      host: openai-2-2024-5-30.pages.dev
+      host: OPENAi-2-2024-5-30.pAGes.dEv
   alpn:
   - h2
   - http/1.1
@@ -274,8 +274,7 @@ proxy-groups:
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
-  tolerance: 50
-     
+  tolerance: 50  
   proxies:  
   - openai-1-2024-5-30.pages.dev
   - openai-2-2024-5-30.pages.dev
