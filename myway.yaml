@@ -207,7 +207,7 @@ proxies:
 
 - name: guanfang-duweiming2005gmail.pages.dev
   type: vless
-  server: japan.com
+  server: www.visa.com
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
@@ -224,7 +224,7 @@ proxies:
 
 - name: guanfang.pages.dev
   type: vless
-  server: japan.com
+  server: www.visa.com
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
@@ -240,7 +240,7 @@ proxies:
   client-fingerprint: randomized
 - name: guanfang-2024-5-30-qq.pages.dev
   type: vless
-  server: japan.com
+  server: www.visa.com
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
@@ -255,10 +255,10 @@ proxies:
   - http/1.1
   client-fingerprint: randomized
 proxy-groups:
-- name: 负载均衡
+- name: warp
   type: load-balance
-  url: http://www.gstatic.com/generate_204
-  interval: 300
+  #url: http://www.gstatic.com/generate_204
+  #interval: 300
   strategy: round-robin
   proxies:
     - Lv1
@@ -277,7 +277,7 @@ proxy-groups:
     - Lv14
     - Lv15
     
-- name: 负载均衡guanfang
+- name: vless
   type: load-balance
   #url: http://www.gstatic.com/generate_204
   #interval: 300
@@ -288,42 +288,42 @@ proxy-groups:
     - guanfang-2024-5-30-qq.pages.dev
 - name: openaiProxy
   type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50  
+  #url: http://www.gstatic.com/generate_204
+  #interval: 300
+  #tolerance: 50  
   proxies:  
   - openai-1-2024-5-30.pages.dev
   - openai-2-2024-5-30.pages.dev
-- name: 自动选择
+- name: auto
   type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
+  #url: http://www.gstatic.com/generate_204
+  #interval: 300
+  #tolerance: 50
   proxies:
-    - 负载均衡
-    - 负载均衡guanfang
+    - warp
+    - vless
        
 - name: Proxy
   type: select
   proxies:
-    - 自动选择
-    - 负载均衡
-    - 负载均衡guanfang
+    - auto
+    - warp
+    - vless
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-KEYWORD,github,Proxy
 - DOMAIN-KEYWORD,proton,Proxy
-- DOMAIN-SUFFIX,netflix.com,负载均衡guanfang
-- DOMAIN-SUFFIX,netflix.net,负载均衡guanfang
-- DOMAIN-SUFFIX,nflximg.com,负载均衡guanfang
-- DOMAIN-SUFFIX,nflximg.net,负载均衡guanfang
-- DOMAIN-SUFFIX,nflxvideo.net,负载均衡guanfang
-- DOMAIN-SUFFIX, nflxso.net,负载均衡guanfang
-- DOMAIN-SUFFIX,nflxext.com,负载均衡guanfang
+- DOMAIN-SUFFIX,netflix.com,vless
+- DOMAIN-SUFFIX,netflix.net,vless
+- DOMAIN-SUFFIX,nflximg.com,vless
+- DOMAIN-SUFFIX,nflximg.net,vless
+- DOMAIN-SUFFIX,nflxvideo.net,vless
+- DOMAIN-SUFFIX, nflxso.net,vless
+- DOMAIN-SUFFIX,nflxext.com,vless
 - DOMAIN-SUFFIX,ai.com,openaiProxy
 - DOMAIN-SUFFIX,openai.com,openaiProxy
 - DOMAIN-KEYWORD,chatgpt,openaiProxy
-- DOMAIN-SUFFIX,fast.com,负载均衡guanfang
+- DOMAIN-SUFFIX,fast.com,vless
 - DOMAIN-SUFFIX,pandora.com,Proxy
 - DOMAIN-KEYWORD,google,Proxy
 - DOMAIN-KEYWORD,gmail,Proxy
