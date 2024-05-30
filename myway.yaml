@@ -238,7 +238,22 @@ proxies:
   - h2
   - http/1.1
   client-fingerprint: randomized
-
+- name: guanfang-2024-5-30-qq.pages.dev
+  type: vless
+  server: japan.com
+  port: 443
+  uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
+  tls: true
+  servername: guAnFang-2024-5-30-QQ.paGeS.deV
+  network: ws
+  ws-opts:
+    path: "/1SSRSbDDyzjz1Xb0?ed=2560"
+    headers:
+      host: GUanFang-2024-5-30-QQ.pAgES.dEV
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
 proxy-groups:
 - name: 负载均衡
   type: load-balance
@@ -270,6 +285,7 @@ proxy-groups:
   proxies:
     - guanfang.pages.dev
     - guanfang-duweiming2005gmail.pages.dev
+    - guanfang-2024-5-30-qq.pages.dev
 - name: openaiProxy
   type: url-test
   url: http://www.gstatic.com/generate_204
