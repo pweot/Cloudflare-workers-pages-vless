@@ -214,7 +214,7 @@ proxies:
   servername: guanfang-duweiming2005gmail.pages.dev
   network: ws
   ws-opts:
-    path: "/?ed=2048"
+    path: "/?ed=2560"
     headers:
       host: guanfang-duweiming2005gmail.pages.dev
   alpn:
