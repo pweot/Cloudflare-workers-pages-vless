@@ -207,7 +207,7 @@ proxies:
 
 - name: guanfang-duweiming2005gmail.pages.dev
   type: vless
-  server: www.visa.com
+  server: www.whoer.net
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
@@ -224,14 +224,14 @@ proxies:
 
 - name: guanfang.pages.dev
   type: vless
-  server: www.visa.com
+  server: icook.hk
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
   servername: guanfang.pages.dev
   network: ws
   ws-opts:
-    path: "/?ed=2048"
+    path: "/?ed=2560"
     headers:
       host: guanfang.pages.dev
   alpn:
