@@ -53,6 +53,23 @@ proxies:
   - http/1.1
   client-fingerprint: randomized
 
+- name: gf.no-openai-2
+  type: vless
+  server: gf.no-openai-2.dynv6.net
+  port: 443
+  uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
+  tls: true
+  servername: Gf.nO-OPeNai-2.dYNV6.nET
+  network: ws
+  ws-opts:
+    path: "/ktO8xxmsAR79KfZJ?ed=2560"
+    headers:
+      host: gF.no-oPenAI-2.dynv6.Net
+  alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: randomized
+
 - name: guanfang-duweiming2005gmail.pages.dev
   type: vless
   server: www.whoer.net
@@ -114,6 +131,7 @@ proxy-groups:
     - guanfang.pages.dev
     - guanfang-duweiming2005gmail.pages.dev
     - guanfang-2024-5-30-qq.pages.dev
+    - name: gf.no-openai-2
 - name: openaiProxy
   type: url-test
   #url: http://www.gstatic.com/generate_204
@@ -130,6 +148,7 @@ proxy-groups:
     - guanfang.pages.dev
     - guanfang-duweiming2005gmail.pages.dev
     - guanfang-2024-5-30-qq.pages.dev
+    - name: gf.no-openai-2
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 #- DOMAIN-KEYWORD,github,Proxy
