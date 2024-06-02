@@ -131,7 +131,7 @@ proxy-groups:
     - guanfang.pages.dev
     - guanfang-duweiming2005gmail.pages.dev
     - guanfang-2024-5-30-qq.pages.dev
-    - name: gf.no-openai-2
+    - gf.no-openai-2
 - name: openaiProxy
   type: url-test
   #url: http://www.gstatic.com/generate_204
@@ -148,7 +148,7 @@ proxy-groups:
     - guanfang.pages.dev
     - guanfang-duweiming2005gmail.pages.dev
     - guanfang-2024-5-30-qq.pages.dev
-    - name: gf.no-openai-2
+    - gf.no-openai-2
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
 #- DOMAIN-KEYWORD,github,Proxy
