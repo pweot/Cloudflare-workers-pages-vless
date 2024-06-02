@@ -10,8 +10,8 @@ dns:
   - tls://223.5.5.5:853
   fallback:
   - tls://1.0.0.1:853
-  - tls://8.8.4.4:853
-  - tls://101.101.101.101:853
+  #- tls://8.8.4.4:853
+  #- tls://101.101.101.101:853
   fallback-filter:
   geoip: true
   geoip-code: CN
