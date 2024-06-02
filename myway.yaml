@@ -35,142 +35,6 @@ dns:
   
   listen: 0.0.0.0:39994
 proxies:
-- name: Lv1
-  type: wireguard
-  server: 162.159.195.7
-  port: 500
-  ip: 172.16.0.102
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: AP/akN9yTUx3z3TRlVRav4EDNCS7yZL4IaCvSaWa4EM=
-  mtu: 1280
-  udp: true
-- name: Lv2
-  type: wireguard
-  server: 162.159.195.222
-  port: 955
-  ip: 172.16.0.103
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: yOkI1geVo7TMVPBcD47Il3tnQPsjyjpn6smXIoS95mY=
-  mtu: 1280
-  udp: true
-- name: Lv3
-  type: wireguard
-  server: 162.159.195.173
-  port: 942
-  ip: 172.16.0.104
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: MH/zdcN+1BXn8nin4Q+25AtPolYXhihWna+8dagDv28=
-  mtu: 1280
-  udp: true
-- name: Lv4
-  type: wireguard
-  server: 162.159.195.126
-  port: 880
-  ip: 172.16.0.105
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: yH8ApzyYERijlURQN80GuwMD9Td9IAMRs6uRXaDkEGo=
-  mtu: 1280
-  udp: true
-- name: Lv5
-  type: wireguard
-  server: 162.159.195.231
-  port: 4233
-  ip: 172.16.0.106
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: CN7IbLVSmI2CsbC6ClzlS9iGKpwI7KI/gFDp8h21zXs=
-  mtu: 1280
-  udp: true
-- name: Lv6
-  type: wireguard
-  server: 162.159.195.50
-  port: 2371
-  ip: 172.16.0.107
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: cIbC5kVF5v3F9U9YzX2gFORfRCogK2Yp/wMRyRAKfmI=
-  mtu: 1280
-  udp: true
-- name: Lv7
-  type: wireguard
-  server: 162.159.195.195
-  port: 5956
-  ip: 172.16.0.108
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: gIKpF6u+FxZ7/leWMVqqMzI+4+/AHocOC77VJwt9rU4=
-  mtu: 1280
-  udp: true
-- name: Lv8
-  type: wireguard
-  server: 162.159.195.62
-  port: 3138
-  ip: 172.16.0.109
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: IOzVj+/uy9ThBBNtzt8PVAJuDkYk77a9SL3D//Fz8XI=
-  mtu: 1280
-  udp: true
-- name: Lv9
-  type: wireguard
-  server: 162.159.195.53
-  port: 4500
-  ip: 172.16.0.110
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: mLF9LtIZ0oWc8gY+gsQfA/0BGrUs/nIy4aMQ/EO13ks=
-  mtu: 1280
-  udp: true
-- name: Lv10
-  type: wireguard
-  server: 162.159.195.41
-  port: 1018
-  ip: 172.16.0.111
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: MCKLH7e7KifRz9E35ernuoy1eGAfpFwRA3CayZ9IHkY=
-  mtu: 1280
-  udp: true
-- name: Lv11
-  type: wireguard
-  server: 162.159.195.157
-  port: 5956
-  ip: 172.16.0.112
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: aGOvwVeEdu8lxpzXro3HBFHpowy0K3soeMDuR6whQlQ=
-  mtu: 1280
-  udp: true
-- name: Lv12
-  type: wireguard
-  server: 162.159.195.49
-  port: 2371
-  ip: 172.16.0.113
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: yPKE5ym0Kj6YMs5JyNQaAbXfhnIUVmDkfgJ1LuhXBn4=
-  mtu: 1280
-  udp: true
-- name: Lv13
-  type: wireguard
-  server: 162.159.195.137
-  port: 4198
-  ip: 172.16.0.114
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: IAp+r6lcm1uvUWWXHGcG5p7/0PAQf6SIPdnT+eujA2I=
-  mtu: 1280
-  udp: true
-- name: Lv14
-  type: wireguard
-  server: 162.159.195.9
-  port: 3581
-  ip: 172.16.0.115
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: wHf1HBEWuf0a2ATCG/GfNLCXZclYZZTokFJrKeW+Ml4=
-  mtu: 1280
-  udp: true
-- name: Lv15
-  type: wireguard
-  server: 162.159.195.2
-  port: 8742
-  ip: 172.16.0.116
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: KEmAjlweN2x8xUJNHvU8b73z/hgmfCof7fr6mkD322w=
-  mtu: 1280
-  udp: true
-
 - name: openai-1-2024-5-30.pages.dev
   type: vless
   server: 146.70.169.118
@@ -211,12 +75,12 @@ proxies:
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
-  servername: guanfang-duweiming2005gmail.pages.dev
+  servername: DuweiMIng.DuwEImiNG.dYNV6.net
   network: ws
   ws-opts:
-    path: "/?ed=2560"
+    path: "/ZNEZ9Q4RkBaShbdK?ed=2560"
     headers:
-      host: guanfang-duweiming2005gmail.pages.dev
+      host: dUweiMing.DuwEiMing.dYNV6.neT
   alpn:
   - h2
   - http/1.1
@@ -224,58 +88,38 @@ proxies:
 
 - name: guanfang.pages.dev
   type: vless
-  server: icook.hk
+  server: www.visa.com
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
-  servername: guanfang.pages.dev
+  servername: pwEoTPrOTOn.PWEOtpRoTON.dyNv6.Net
   network: ws
   ws-opts:
-    path: "/?ed=2560"
+    path: "/IYeg1XOgqCucj7aG?ed=2560"
     headers:
-      host: guanfang.pages.dev
+      host: pWEoTProtoN.PWEOtprotON.Dynv6.NEt
   alpn:
   - h2
   - http/1.1
   client-fingerprint: randomized
 - name: guanfang-2024-5-30-qq.pages.dev
   type: vless
-  server: www.visa.com
+  server: guanfang.guanfang-363457884.dynv6.net
   port: 443
   uuid: 3a3a0ef5-465d-409b-a07c-942584e3aae7
   tls: true
-  servername: guAnFang-2024-5-30-QQ.paGeS.deV
+  servername: guanFaNg.GUaNFANG-363457884.DyNV6.nEt
   network: ws
   ws-opts:
-    path: "/1SSRSbDDyzjz1Xb0?ed=2560"
+    path: "/PAOpiaBwiL3wjDcE?ed=2560"
     headers:
-      host: GUanFang-2024-5-30-QQ.pAgES.dEV
+      host: GUaNfANg.GUaNfang-363457884.Dynv6.nEt
   alpn:
   - h2
   - http/1.1
   client-fingerprint: randomized
 proxy-groups:
-- name: warp
-  type: load-balance
-  #url: http://www.gstatic.com/generate_204
-  #interval: 300
-  strategy: round-robin
-  proxies:
-    - Lv1
-    - Lv2
-    - Lv3
-    - Lv4
-    - Lv5
-    - Lv6
-    - Lv7
-    - Lv8
-    - Lv9
-    - Lv10
-    - Lv11
-    - Lv12
-    - Lv13
-    - Lv14
-    - Lv15
+
     
 - name: vless
   type: load-balance
@@ -294,24 +138,17 @@ proxy-groups:
   proxies:  
   - openai-1-2024-5-30.pages.dev
   - openai-2-2024-5-30.pages.dev
-- name: auto
-  type: url-test
-  #url: http://www.gstatic.com/generate_204
-  #interval: 300
-  #tolerance: 50
-  proxies:
-    - warp
-    - vless
-       
+
 - name: Proxy
   type: select
   proxies:
-    - auto
-    - warp
     - vless
+    - guanfang.pages.dev
+    - guanfang-duweiming2005gmail.pages.dev
+    - guanfang-2024-5-30-qq.pages.dev
 rules:
 - DOMAIN-KEYWORD,onedrive,Proxy
-- DOMAIN-KEYWORD,github,Proxy
+#- DOMAIN-KEYWORD,github,Proxy
 - DOMAIN-KEYWORD,proton,Proxy
 - DOMAIN-SUFFIX,netflix.com,vless
 - DOMAIN-SUFFIX,netflix.net,vless
